@@ -10,5 +10,6 @@
 
 int main(int argc, char *argv[])
 {
+	NSLog(@"GC = %@", [NSGarbageCollector defaultCollector]);
     return NSApplicationMain(argc,  (const char **) argv);
 }

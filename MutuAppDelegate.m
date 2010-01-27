@@ -17,22 +17,32 @@
 @synthesize sshServer;
 @synthesize tunnelScript;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	sshTask = [[NSTask alloc] init];
-	sshSocksPort = @"7777";
-	sshUser = @"mavjones";
-	sshServer = @"bruja.cs.tu-berlin.de";
-	tunnelScript = @"/tmp/tunnel.sh";	
-}
-
 -(void)awakeFromNib {
 	statusMenuItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
 	[statusMenuItem setMenu:statusMenu];
 	[statusMenuItem setTitle:@"Mutu"];
+	//	[statusMenuItem setImage:(NSImage *)image];
 	[statusMenuItem setHighlightMode:YES];
 }
 
+-(id)init {
+	[super init];
+	NSLog(@"Initialized!");
+	return self;
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	sshSocksPort = @"7777";
+//	sshUser = @"mavjones";
+//	sshServer = @"bruja.cs.tu-berlin.de";
+	sshUser = @"hgschmidt";
+	sshServer = @"localhost";
+	tunnelScript = @"/tmp/tunnel.sh";	
+}
+
+
 -(IBAction)createTunnel:(id)sender {	
+	sshTask = [[NSTask alloc] init];
     [sshTask setLaunchPath: tunnelScript];
 	
     NSArray *arguments;
@@ -45,29 +55,17 @@
 	
     [sshTask setArguments: arguments];
 	[sshTask launch];
-	NSLog(@"Tunnel established");
+
+	NSLog(@"Tunnel established!");
+	NSLog(@"Tunnel CWD = %@", [sshTask currentDirectoryPath]);	
 }
 
 -(IBAction)destroyTunnel:(id)sender {
 	NSLog(@"Attempting to close tunnel");
-	[sshTask interrupt];
-	NSLog(@"debug");
 
-//	while ([sshTask isRunning]) {
-//		NSLog(@"Still waiting");
-//		sleep(1);
-//		NSLog(@"Still waiting");
-//	}
-//
-//	NSLog(@"Task is still running? %d", [sshTask isRunning]);
-
-//	
-//	if (![sshTask isRunning]) {
-//		int status = [sshTask terminationStatus];
-//		if (status == 0)
-//			NSLog(@"Task succeeded.");
-//		else
-//			NSLog(@"Task failed.");
-//	}
+	[sshTask terminate];
+	sshTask = nil;
+	
+	NSLog(@"Tunnel closed!");
 }
 @end

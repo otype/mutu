@@ -12,15 +12,19 @@
 	NSWindow *window;
 	IBOutlet NSMenu *statusMenu;
 	NSStatusItem *statusMenuItem;
+	NSTask *sshTask;
+	NSString *sshSocksPort;
+	NSString *sshUser;
+	NSString *sshServer;
+	NSString *tunnelScript;
 }
 
-@property (assign) NSTask *sshTask;
-@property (assign) NSString *sshSocksPort;
-@property (assign) NSString *sshUser;
-@property (assign) NSString *sshServer;
-@property (assign) NSString *tunnelScript;
-
-@property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet		NSWindow	*window;
+@property (assign)				NSTask		*sshTask;
+@property (readwrite, assign)	NSString	*sshSocksPort;
+@property (readwrite, assign)	NSString	*sshUser;
+@property (readwrite, assign)	NSString	*sshServer;
+@property (readwrite, assign)	NSString	*tunnelScript;
 
 -(IBAction)createTunnel:(id)sender;
 -(IBAction)destroyTunnel:(id)sender;

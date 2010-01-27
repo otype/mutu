@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -298,7 +300,7 @@
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>0 74 995 704 0 0 1280 778 </string>
+						<string>149 316 995 704 0 0 1920 1058 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -309,8 +311,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -325,17 +325,6 @@
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
 										<string>MutuAppDelegate.m</string>
-										<key>_historyCapacity</key>
-										<integer>0</integer>
-										<key>bookmark</key>
-										<string>EFFE71A9110F0CFA00BEBB6D</string>
-										<key>history</key>
-										<array>
-											<string>EF86CB7E110B267900BFA4B2</string>
-											<string>EFFE717F110F093F00BEBB6D</string>
-											<string>EFFE719A110F0B2600BEBB6D</string>
-											<string>EFFE719B110F0B2600BEBB6D</string>
-										</array>
 									</dict>
 									<key>SplitCount</key>
 									<string>1</string>
@@ -346,14 +335,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {787, 482}}</string>
+								<string>{{0, 0}, {787, 476}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 74 995 704 0 0 1280 778 </string>
+								<string>149 316 995 704 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>482pt</string>
+							<string>476pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -366,14 +355,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 487}, {787, 176}}</string>
+								<string>{{0, 481}, {787, 182}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 74 995 704 0 0 1280 778 </string>
+								<string>149 316 995 704 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>176pt</string>
+							<string>182pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -392,9 +381,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>EFFE716C110F05DF00BEBB6D</string>
+				<string>EF31716F110F524D00154890</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>EFFE716D110F05DF00BEBB6D</string>
+				<string>EF317170110F524D00154890</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -532,15 +521,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>EFFE718C110F093F00BEBB6D</string>
-		<string>EFFE718D110F093F00BEBB6D</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>EF86CB4E110A25C200BFA4B2</string>
-		<string>/Volumes/ProjectSafe/private/mutu/Mutu.xcodeproj</string>
+		<string>/Users/hgschmidt/Projects/private/mutu/Mutu.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>0 74 995 704 0 0 1280 778 </string>
+	<string>149 316 995 704 0 0 1920 1058 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -561,7 +546,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MutuAppDelegate.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -570,7 +555,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {653, 329}}</string>
 								<key>RubberWindowFrame</key>
-								<string>568 163 653 611 0 0 1280 778 </string>
+								<string>1148 433 653 611 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -578,8 +563,6 @@
 							<string>329pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -596,7 +579,7 @@
 								<key>Frame</key>
 								<string>{{0, 334}, {653, 236}}</string>
 								<key>RubberWindowFrame</key>
-								<string>568 163 653 611 0 0 1280 778 </string>
+								<string>1148 433 653 611 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -619,7 +602,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>EF86CB4E110A25C200BFA4B2</string>
-				<string>EFFE716E110F05DF00BEBB6D</string>
+				<string>EF317171110F524D00154890</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -628,11 +611,11 @@
 			<key>WindowContentMinSize</key>
 			<string>486 300</string>
 			<key>WindowString</key>
-			<string>568 163 653 611 0 0 1280 778 </string>
+			<string>1148 433 653 611 0 0 1920 1058 </string>
 			<key>WindowToolGUID</key>
 			<string>EF86CB4E110A25C200BFA4B2</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
