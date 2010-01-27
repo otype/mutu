@@ -2051,6 +2051,14 @@
 					</object>
 					<int key="connectionID">539</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">quitApplication:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="539148482"/>
+					</object>
+					<int key="connectionID">540</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -3084,8 +3092,8 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="762771544"/>
-							<reference ref="539148482"/>
 							<reference ref="948982987"/>
+							<reference ref="539148482"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -3657,7 +3665,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">539</int>
+			<int key="maxID">540</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3671,9 +3679,11 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>createTunnel:</string>
 							<string>destroyTunnel:</string>
+							<string>quitApplication:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>

@@ -7,6 +7,7 @@
 //
 
 #import "MutuAppDelegate.h"
+#import "PreChecks.h"
 
 @implementation MutuAppDelegate
 
@@ -17,6 +18,7 @@
 @synthesize sshServer;
 @synthesize tunnelScript;
 
+
 -(void)awakeFromNib {
 	statusMenuItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
 	[statusMenuItem setMenu:statusMenu];
@@ -25,47 +27,94 @@
 	[statusMenuItem setHighlightMode:YES];
 }
 
+
 -(id)init {
-	[super init];
-	NSLog(@"Initialized!");
-	return self;
+    self = [super init];
+	
+	NSLog(@"Initializing: [TaskObserver]");
+    [[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(checkATaskStatus:)
+												 name:NSTaskDidTerminateNotification
+											   object:nil];
+    return self;
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+- (void)checkATaskStatus:(NSNotification *)aNotification {
+    int status = [[aNotification object] terminationStatus];
+	NSData *data = [[outputPipe fileHandleForReading] readDataToEndOfFile];	
+	NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];	
+	
+    if (status == 0) {
+		/* THIS PART IS MOST LIKELY NEVER BEING CALLED */
+		NSLog(@"Task response: %@", [result componentsSeparatedByString:@"\n"]);
+	} else {
+		NSLog(@"[ERROR] Tunnel could not be established!");
+		NSLog(@"[ERROR] Error description: %@", [result componentsSeparatedByString:@"\n"]);
+	}        
+	
+	/* GC */
+	data = nil;
+	result = nil;	
+}
+
+
+-(void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	NSLog(@"Initializing: [Connection Details]");
 	sshSocksPort = @"7777";
-//	sshUser = @"mavjones";
-//	sshServer = @"bruja.cs.tu-berlin.de";
-	sshUser = @"hgschmidt";
-	sshServer = @"localhost";
-	tunnelScript = @"/tmp/tunnel.sh";	
+	sshUser = @"mavjones";
+	sshServer = @"bruja.cs.tu-berlin.de";
+//	sshUser = @"hgschmidt";
+//	sshServer = @"localhost";
+//	tunnelScript = @"/tmp/tunnel.sh";	
+	NSLog(@"Initialization finished");		
 }
 
 
--(IBAction)createTunnel:(id)sender {	
+/*
+ * Create a tunnel with given login credentials and server information
+ * on a given SOCKS Port.
+ */
+-(IBAction)createTunnel:(id)sender {
+	if (sshTask) {
+		NSLog(@"Found an established tunnel! Skipping!");
+		return;
+	}
+	
 	sshTask = [[NSTask alloc] init];
-    [sshTask setLaunchPath: tunnelScript];
+	inputPipe = [[NSPipe alloc] init];
+	outputPipe = [[NSPipe alloc] init];
 	
-    NSArray *arguments;
-	arguments = [NSArray arrayWithObjects: sshSocksPort, sshUser, sshServer, nil];
+	[sshTask setStandardInput:inputPipe];
+	[sshTask setStandardOutput:outputPipe];
+	[sshTask setStandardError:outputPipe];
 	
-	NSLog([arguments componentsJoinedByString:@" "]);
-	NSLog(@"SOCKS PORT = %@", sshSocksPort);
-	NSLog(@"SSH USER = %@", sshUser);
-	NSLog(@"SSH SERVER = %@", sshServer);
-	
-    [sshTask setArguments: arguments];
-	[sshTask launch];
+	[sshTask setLaunchPath:@"/usr/bin/ssh"];
+	[sshTask setArguments:[NSArray arrayWithObjects: @"-D", sshSocksPort, @"-l", sshUser, @"-N", sshServer, nil]];
 
-	NSLog(@"Tunnel established!");
-	NSLog(@"Tunnel CWD = %@", [sshTask currentDirectoryPath]);	
+	NSLog(@"Establishing a tunnel on SOCKS PORT = \"%@\", SSH SERVER = \"%@\", SSH USER = \"%@\"", sshSocksPort, sshUser, sshServer);
+	[sshTask launch];
 }
+
 
 -(IBAction)destroyTunnel:(id)sender {
-	NSLog(@"Attempting to close tunnel");
-
-	[sshTask terminate];
-	sshTask = nil;
+	if ([sshTask isRunning]) {
+		NSLog(@"Destroying tunnel");
+		[sshTask interrupt];
+		[sshTask waitUntilExit];		
+		NSLog(@"Tunnel closed!");				
+	} else {
+		NSLog(@"No tunnel established at the moment!");
+	}
 	
-	NSLog(@"Tunnel closed!");
+	/* GC */
+	sshTask = nil;
+	inputPipe = nil;
+	outputPipe = nil;
 }
+
+-(IBAction)quitApplication:(id)sender {
+	NSLog(@"Quitting application! Bye bye!");
+	[NSApp terminate:self];
+}
+
 @end

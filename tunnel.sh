@@ -35,5 +35,7 @@ OTLog "SSH_SOCKS_PORT = $SSH_SOCKS_PORT"
 OTLog "SSH_USER = $SSH_USER"
 OTLog "SSH_SERVER = $SSH_SERVER"
 
-# Execute command
+#
+# Establish the tunnel
+#
 $SSH_CMD -D $SSH_SOCKS_PORT -N $SSH_USER@$SSH_SERVER

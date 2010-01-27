@@ -13,6 +13,8 @@
 	IBOutlet NSMenu *statusMenu;
 	NSStatusItem *statusMenuItem;
 	NSTask *sshTask;
+	NSPipe *inputPipe;
+	NSPipe *outputPipe;
 	NSString *sshSocksPort;
 	NSString *sshUser;
 	NSString *sshServer;
@@ -28,4 +30,5 @@
 
 -(IBAction)createTunnel:(id)sender;
 -(IBAction)destroyTunnel:(id)sender;
+-(IBAction)quitApplication:(id)sender;
 @end
