@@ -1,0 +1,54 @@
+[Pre-Init-Phase]
+Check for:
+- /usr/bin/ssh
+- existing Network connection (is this required?)
+- minimum of one ssh credential set has to exist
+
+
+[Post-Init-Phase]
+- MenuBar Icon loaded
+- No dock item
+- Log window (still missing)
+
+[Trying-to-establish-tunnel-phase]
+- check for already running tunnels or other SSH sessions
+- check if chosen SOCKS port is in use (via shell script?)
+- Request password for given credential record from keychain
+- if not exist, ask user for new password
+- if exists, create tunnel with given credential record
+
+[Trying-to-destroy-tunnel-phase]
+- Check if tunnel exists
+- kill existing tunnel
+- if no tunnel exists, create alert
+
+[Tunnel-not-established-phase]
+- "Stop tunnel" grayed out OR replaced with "Start tunnel"
+- Preferences can be changed		
+
+[Tunnel-established-phase]
+- "Start tunnel" grayed out OR replaced with "Stop tunnel"
+- Preferences
+	- all records can still be changed
+
+[Changing-credential-record-phase]
+- List of saved ssh credential records
+- create a ssh credential record
+	- provide username
+	- provide servername
+	- provide password
+		- save new password to keychain
+	- provide local SOCKS Port (still missing right now)
+- update a ssh credential record
+	- change username
+	- change servername
+	- change password
+		- check for password in keychain
+			- if exists, update password in keychain
+			- if not exists, ask user to provide password
+	- change SOCKS port
+- delete ssh credential record
+	- remove password item from keychain
+	- remove record
+
+		
