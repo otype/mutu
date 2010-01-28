@@ -221,25 +221,107 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>EF3171F51110458A00154890</string>
+				<string>EF452311111231D1001E86A3</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>MutuAppDelegate.m</string>
+				<string>MutuAppDelegate.h</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>EF3171F61110458A00154890</string>
+						<string>EF452312111231D1001E86A3</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>MutuAppDelegate.m</string>
+						<string>MutuAppDelegate.h</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>EF45225A1111FE21001E86A3</string>
+						<string>EF45237B1112384C001E86A3</string>
 						<key>history</key>
 						<array>
-							<string>EF4522581111FE21001E86A3</string>
-							<string>EF4522591111FE21001E86A3</string>
+							<string>EF45237A1112384C001E86A3</string>
+							<string>EF452370111237AB001E86A3</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {852, 681}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>315 56 852 722 0 0 1280 778 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>EF452373111237AB001E86A3</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>PreferenceController.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>EF452374111237AB001E86A3</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>PreferenceController.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>EF45237C1112384C001E86A3</string>
+						<key>history</key>
+						<array>
+							<string>EF452375111237AB001E86A3</string>
+							<string>EF452376111237AB001E86A3</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {786, 629}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>15 103 786 670 0 0 1280 778 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>EF45228B111226C3001E86A3</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>MutuAppDelegate.h</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>EF45228C111226C3001E86A3</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>MutuAppDelegate.h</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>EF45237D1112384C001E86A3</string>
+						<key>history</key>
+						<array>
+							<string>EF452309111230B6001E86A3</string>
+							<string>EF45230A111230B6001E86A3</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -333,13 +415,13 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>19</integer>
-											<integer>13</integer>
+											<integer>8</integer>
+											<integer>1</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 30}, {429, 333}}</string>
+									<string>{{0, 27}, {429, 333}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -522,7 +604,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>286391841.02480203</real>
+	<real>286406732.52524</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -539,14 +621,17 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>EF45225B1111FE21001E86A3</string>
+		<string>EF452379111237AB001E86A3</string>
+		<string>EFFE720D110F28CC00BEBB6D</string>
 		<string>EF4521311111DC72001E86A3</string>
 		<string>EF4521321111DC72001E86A3</string>
 		<string>1C530D54069F1CE1000CFCEE</string>
+		<string>EF45228B111226C3001E86A3</string>
 		<string>/Volumes/ProjectSafe/private/mutu/Mutu.xcodeproj</string>
+		<string>EF452373111237AB001E86A3</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
 		<string>1C530D5B069F1CE1000CFCEE</string>
-		<string>EF3171F51110458A00154890</string>
+		<string>EF452311111231D1001E86A3</string>
 	</array>
 	<key>WindowString</key>
 	<string>1 357 446 419 0 0 1280 778 </string>
@@ -1559,7 +1644,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>EFFE720D110F28CC00BEBB6D</string>
-				<string>EFFE720E110F28CC00BEBB6D</string>
+				<string>EF45227E111225F5001E86A3</string>
 				<string>EFFE720C110F28CC00BEBB6D</string>
 			</array>
 			<key>WindowString</key>

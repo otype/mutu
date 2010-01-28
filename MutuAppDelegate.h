@@ -10,8 +10,12 @@
 
 @interface MutuAppDelegate : NSObject <NSApplicationDelegate> {
 	NSWindow *window;
-	IBOutlet NSMenu *statusMenuOutlet;
-	NSStatusItem *statusMenu;
+	
+	NSStatusItem *statusMenuItem;
+	IBOutlet NSMenu *statusMenu;
+	IBOutlet NSMenuItem *startTunnelMenuItem;
+	IBOutlet NSMenuItem *stopTunnelMenuItem;
+	
 	NSTask *sshTask;
 	NSPipe *inputPipe;
 	NSPipe *outputPipe;
@@ -29,5 +33,8 @@
 -(IBAction)createTunnel:(id)sender;
 -(IBAction)destroyTunnel:(id)sender;
 -(IBAction)preferencesPanel:(id)sender;
--(IBAction)quitApplication:(id)sender;
+-(void)killTask;
+-(void)switchMenuItemTitle:(BOOL)startItem stopItem:(BOOL)stopItemValue;
+//-(void)somethingWentWrong;
+
 @end

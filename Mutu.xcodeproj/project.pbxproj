@@ -17,6 +17,7 @@
 		EF4520F31111D3FE001E86A3 /* PreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4520F21111D3FE001E86A3 /* PreferenceController.m */; };
 		EF4520F71111D6AA001E86A3 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4520F61111D6AA001E86A3 /* Preferences.xib */; };
 		EF4522071111EF8C001E86A3 /* Workflow.txt in Resources */ = {isa = PBXBuildFile; fileRef = EF4522061111EF8C001E86A3 /* Workflow.txt */; };
+		EF4522BF11122A5E001E86A3 /* Emerald.gif in Resources */ = {isa = PBXBuildFile; fileRef = EF4522BE11122A5E001E86A3 /* Emerald.gif */; };
 		EF81C3091110A70A0029B281 /* PreChecks.m in Sources */ = {isa = PBXBuildFile; fileRef = EF81C3081110A70A0029B281 /* PreChecks.m */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		EF4520F21111D3FE001E86A3 /* PreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceController.m; sourceTree = "<group>"; };
 		EF4520F61111D6AA001E86A3 /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		EF4522061111EF8C001E86A3 /* Workflow.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Workflow.txt; sourceTree = "<group>"; };
+		EF4522BE11122A5E001E86A3 /* Emerald.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Emerald.gif; sourceTree = "<group>"; };
 		EF81C3071110A70A0029B281 /* PreChecks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreChecks.h; sourceTree = "<group>"; };
 		EF81C3081110A70A0029B281 /* PreChecks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreChecks.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EF4522BE11122A5E001E86A3 /* Emerald.gif */,
 				EF4520F61111D6AA001E86A3 /* Preferences.xib */,
 				EF31718A110F54C900154890 /* tunnel.sh */,
 				8D1107310486CEB800E47090 /* Mutu-Info.plist */,
@@ -188,6 +191,7 @@
 				EF31718B110F54C900154890 /* tunnel.sh in Resources */,
 				EF4520F71111D6AA001E86A3 /* Preferences.xib in Resources */,
 				EF4522071111EF8C001E86A3 /* Workflow.txt in Resources */,
+				EF4522BF11122A5E001E86A3 /* Emerald.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

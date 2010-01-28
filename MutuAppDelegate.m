@@ -19,17 +19,13 @@
 
 
 -(void)awakeFromNib {
-//	statusMenuItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
-//	[statusMenuItem setMenu:statusMenu];
-//	[statusMenuItem setTitle:@"Mutu"];
-//	//	[statusMenuItem setImage:(NSImage *)image];
-//	[statusMenuItem setHighlightMode:YES];
+	statusMenuItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
 	
-	statusMenu = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
-	[statusMenu setMenu:statusMenuOutlet];
-	[statusMenu setTitle:@"Mutu"];
-	//	[statusMenu setImage:(NSImage *)image];
-	[statusMenu setHighlightMode:YES];
+	NSImage *statusImage = [NSImage imageNamed:@"Emerald.gif"];
+	[statusMenuItem setImage:statusImage];
+	[statusMenuItem setHighlightMode:YES];	
+	[statusMenuItem setMenu:statusMenu];
+//	[statusMenuItem setTitle:NSLocalizedString(@"Mutu", @"Mutu menu item text")];	
 }
 
 
@@ -62,8 +58,11 @@
 		NSArray *terminalResponses;
 		terminalResponses = [result componentsSeparatedByString:@"\n"];
 		for(NSDictionary *responseLine in terminalResponses) {
-			if ([(NSString *)responseLine length] != 0)
+			if ([(NSString *)responseLine length] != 0) {				
 				NSLog(@"[TERMRESP] \"%@\"", responseLine);
+				[self killTask];
+//				[self somethingWentWrong];
+			}
 		}
 	}        
 	
@@ -75,13 +74,15 @@
 
 -(void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	NSLog(@"Initializing: [Connection Details]");
+
 	sshSocksPort = @"7777";
 	sshUser = @"mavjones";
 	sshServer = @"bruja.cs.tu-berlin.de";
 //	sshUser = @"hgschmidt";
 //	sshServer = @"localhost";
-//	tunnelScript = @"/tmp/tunnel.sh";	
-	NSLog(@"Initialization finished");		
+
+	NSLog(@"Initialization finished");
+	[self switchMenuItemTitle:TRUE stopItem:FALSE];
 }
 
 
@@ -113,32 +114,46 @@
 	[sshTask launch];
 	
 	NSLog(@"SSH Tunnel PID = \"%d\"", [sshTask processIdentifier]);
+
+	[self switchMenuItemTitle:FALSE stopItem:TRUE];
 }
 
 
 -(IBAction)destroyTunnel:(id)sender {
+	[self killTask];
+}
+
+-(void)killTask {
 	if ([sshTask isRunning]) {
 		NSLog(@"Destroying tunnel with PID = \"%d\"", [sshTask processIdentifier]);
 		[sshTask interrupt];
 		[sshTask waitUntilExit];
-		NSLog(@"Tunnel closed!");				
+		NSLog(@"Tunnel closed!");
 	} else {
-		NSLog(@"No tunnel established at the moment!");
+		NSLog(@"No tunnels exist!");
 	}
+	
+	[self switchMenuItemTitle:TRUE stopItem:FALSE];
 	
 	/* GC */
 	sshTask = nil;
 	inputPipe = nil;
-	outputPipe = nil;
+	outputPipe = nil;	
 }
 
 -(IBAction)preferencesPanel:(id)sender {
 	NSLog(@"Preferences Panel");
 }
 
--(IBAction)quitApplication:(id)sender {
-	NSLog(@"Quitting application! Bye bye!");
-	[NSApp terminate:self];
+-(void)switchMenuItemTitle:(BOOL)startItem stopItem:(BOOL)stopItemValue {
+	[startTunnelMenuItem setEnabled:startItem];
+	[stopTunnelMenuItem setEnabled:stopItemValue];	
 }
+
+//-(void)somethingWentWrong {
+//	NSLog(@"[ERROR] Uh-oh! Something went wrong!");
+//	NSRunAlertPanel(@"Tunnel is down!", @"Please check what went wrong!", @"OK", nil, nil);
+//
+//}
 
 @end
