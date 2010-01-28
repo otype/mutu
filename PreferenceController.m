@@ -24,24 +24,24 @@
 -(IBAction)changeSSHCredentials:(id)sender {	
 	if (([[usernameField stringValue] length] == 0) ||
 		([[passwordField stringValue] length] == 0) ||
-		([[servernameField stringValue] length] == 0)) {
+		([[servernameField stringValue] length] == 0) ||
+		([[socksPortField stringValue] length] == 0)) {
 		
 		NSRunAlertPanel(@"Empty fields", @"Please provide values for all fields!", @"OK", nil, nil);
-		//NSLog(@"Alert choice = \"%d\"", choice);		
-		NSLog(@"[ERROR] Empty fields");
+		NSLog(@"[ERROR] (Alert) Empty fields");
 	} else {
 		NSLog(@"Setting credentials:");
 		NSLog(@"-> USERNAME = \"%@\"", [usernameField stringValue]);
 		NSLog(@"-> PASSWORD = \"%@\"", [passwordField stringValue]);
-		NSLog(@"-> SERVERNAME = \"%@\"", [servernameField stringValue]);
+		NSLog(@"-> SERVER = \"%@\"", [servernameField stringValue]);
+		NSLog(@"-> SOCKS PORT = \"%@\"", [socksPortField stringValue]);
 		
 		[self close];		
 	}
-
 }
 
 -(IBAction)cancelSettingNewLoginData:(id)sender {
-	NSLog(@"Cancelling");
+	NSLog(@"Cancelled changing credentials");
 	[self close];
 }
 

@@ -10,15 +10,14 @@
 
 @interface MutuAppDelegate : NSObject <NSApplicationDelegate> {
 	NSWindow *window;
-	IBOutlet NSMenu *statusMenu;
-	NSStatusItem *statusMenuItem;
+	IBOutlet NSMenu *statusMenuOutlet;
+	NSStatusItem *statusMenu;
 	NSTask *sshTask;
 	NSPipe *inputPipe;
 	NSPipe *outputPipe;
 	NSString *sshSocksPort;
 	NSString *sshUser;
 	NSString *sshServer;
-	NSString *tunnelScript;
 }
 
 @property (assign) IBOutlet		NSWindow	*window;
@@ -26,7 +25,6 @@
 @property (readwrite, assign)	NSString	*sshSocksPort;
 @property (readwrite, assign)	NSString	*sshUser;
 @property (readwrite, assign)	NSString	*sshServer;
-@property (readwrite, assign)	NSString	*tunnelScript;
 
 -(IBAction)createTunnel:(id)sender;
 -(IBAction)destroyTunnel:(id)sender;

@@ -16,15 +16,20 @@
 @synthesize sshSocksPort;
 @synthesize sshUser;
 @synthesize sshServer;
-@synthesize tunnelScript;
 
 
 -(void)awakeFromNib {
-	statusMenuItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
-	[statusMenuItem setMenu:statusMenu];
-	[statusMenuItem setTitle:@"Mutu"];
-	//	[statusMenuItem setImage:(NSImage *)image];
-	[statusMenuItem setHighlightMode:YES];
+//	statusMenuItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
+//	[statusMenuItem setMenu:statusMenu];
+//	[statusMenuItem setTitle:@"Mutu"];
+//	//	[statusMenuItem setImage:(NSImage *)image];
+//	[statusMenuItem setHighlightMode:YES];
+	
+	statusMenu = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
+	[statusMenu setMenu:statusMenuOutlet];
+	[statusMenu setTitle:@"Mutu"];
+	//	[statusMenu setImage:(NSImage *)image];
+	[statusMenu setHighlightMode:YES];
 }
 
 

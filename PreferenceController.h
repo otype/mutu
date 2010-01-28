@@ -15,6 +15,7 @@
 	IBOutlet NSTextField *usernameField;
 	IBOutlet NSTextField *passwordField;
 	IBOutlet NSTextField *servernameField;
+	IBOutlet NSTextField *socksPortField;
 }
 
 -(IBAction)changeSSHCredentials:(id)sender;
