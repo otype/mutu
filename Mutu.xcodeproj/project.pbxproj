@@ -13,6 +13,10 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		EF31718B110F54C900154890 /* tunnel.sh in Resources */ = {isa = PBXBuildFile; fileRef = EF31718A110F54C900154890 /* tunnel.sh */; };
+		EF4520F01111D3B2001E86A3 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4520EF1111D3B2001E86A3 /* AppController.m */; };
+		EF4520F31111D3FE001E86A3 /* PreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4520F21111D3FE001E86A3 /* PreferenceController.m */; };
+		EF4520F71111D6AA001E86A3 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4520F61111D6AA001E86A3 /* Preferences.xib */; };
+		EF4522071111EF8C001E86A3 /* Workflow.txt in Resources */ = {isa = PBXBuildFile; fileRef = EF4522061111EF8C001E86A3 /* Workflow.txt */; };
 		EF81C3091110A70A0029B281 /* PreChecks.m in Sources */ = {isa = PBXBuildFile; fileRef = EF81C3081110A70A0029B281 /* PreChecks.m */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +34,12 @@
 		8D1107310486CEB800E47090 /* Mutu-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Mutu-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Mutu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mutu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF31718A110F54C900154890 /* tunnel.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = tunnel.sh; sourceTree = "<group>"; };
+		EF4520EE1111D3B2001E86A3 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		EF4520EF1111D3B2001E86A3 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		EF4520F11111D3FE001E86A3 /* PreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceController.h; sourceTree = "<group>"; };
+		EF4520F21111D3FE001E86A3 /* PreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceController.m; sourceTree = "<group>"; };
+		EF4520F61111D6AA001E86A3 /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		EF4522061111EF8C001E86A3 /* Workflow.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Workflow.txt; sourceTree = "<group>"; };
 		EF81C3071110A70A0029B281 /* PreChecks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreChecks.h; sourceTree = "<group>"; };
 		EF81C3081110A70A0029B281 /* PreChecks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreChecks.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,6 +63,10 @@
 				256AC3D90F4B6AC300CF3369 /* MutuAppDelegate.m */,
 				EF81C3071110A70A0029B281 /* PreChecks.h */,
 				EF81C3081110A70A0029B281 /* PreChecks.m */,
+				EF4520EE1111D3B2001E86A3 /* AppController.h */,
+				EF4520EF1111D3B2001E86A3 /* AppController.m */,
+				EF4520F11111D3FE001E86A3 /* PreferenceController.h */,
+				EF4520F21111D3FE001E86A3 /* PreferenceController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -107,10 +121,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EF4520F61111D6AA001E86A3 /* Preferences.xib */,
 				EF31718A110F54C900154890 /* tunnel.sh */,
 				8D1107310486CEB800E47090 /* Mutu-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				EF4522061111EF8C001E86A3 /* Workflow.txt */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -170,6 +186,8 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				EF31718B110F54C900154890 /* tunnel.sh in Resources */,
+				EF4520F71111D6AA001E86A3 /* Preferences.xib in Resources */,
+				EF4522071111EF8C001E86A3 /* Workflow.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +201,8 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* MutuAppDelegate.m in Sources */,
 				EF81C3091110A70A0029B281 /* PreChecks.m in Sources */,
+				EF4520F01111D3B2001E86A3 /* AppController.m in Sources */,
+				EF4520F31111D3FE001E86A3 /* PreferenceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

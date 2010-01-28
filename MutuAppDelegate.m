@@ -29,15 +29,20 @@
 
 
 -(id)init {
-    self = [super init];
-	
+    self = [super init];	
+
 	NSLog(@"Initializing: [TaskObserver]");
-    [[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(checkATaskStatus:)
-												 name:NSTaskDidTerminateNotification
-											   object:nil];
+	NSNotificationCenter *notificationCenter;
+	notificationCenter = [NSNotificationCenter defaultCenter];	
+	[notificationCenter removeObserver:self];
+    [notificationCenter addObserver:self
+						   selector:@selector(checkATaskStatus:)
+							   name:NSTaskDidTerminateNotification
+							 object:sshTask];	
+	
     return self;
 }
+
 
 - (void)checkATaskStatus:(NSNotification *)aNotification {
     int status = [[aNotification object] terminationStatus];
@@ -48,8 +53,13 @@
 		/* THIS PART IS MOST LIKELY NEVER BEING CALLED */
 		NSLog(@"Task response: %@", [result componentsSeparatedByString:@"\n"]);
 	} else {
-		NSLog(@"[ERROR] Tunnel could not be established!");
-		NSLog(@"[ERROR] Error description: %@", [result componentsSeparatedByString:@"\n"]);
+		NSLog(@"Tunnel task terminated");
+		NSArray *terminalResponses;
+		terminalResponses = [result componentsSeparatedByString:@"\n"];
+		for(NSDictionary *responseLine in terminalResponses) {
+			if ([(NSString *)responseLine length] != 0)
+				NSLog(@"[TERMRESP] \"%@\"", responseLine);
+		}
 	}        
 	
 	/* GC */
@@ -76,7 +86,7 @@
  */
 -(IBAction)createTunnel:(id)sender {
 	if (sshTask) {
-		NSLog(@"Found an established tunnel! Skipping!");
+		NSLog(@"Found an established tunnel with PID = \"%d\"! Skipping!", [sshTask processIdentifier]);
 		return;
 	}
 	
@@ -91,16 +101,21 @@
 	[sshTask setLaunchPath:@"/usr/bin/ssh"];
 	[sshTask setArguments:[NSArray arrayWithObjects: @"-D", sshSocksPort, @"-l", sshUser, @"-N", sshServer, nil]];
 
-	NSLog(@"Establishing a tunnel on SOCKS PORT = \"%@\", SSH SERVER = \"%@\", SSH USER = \"%@\"", sshSocksPort, sshUser, sshServer);
+	NSLog(@"Establishing tunnel ...");
+	NSLog(@"-> SOCKS PORT = \"%@\"", sshSocksPort);
+	NSLog(@"-> SSH SERVER = \"%@\"", sshServer);
+	NSLog(@"-> SSH USER = \"%@\"", sshUser);
 	[sshTask launch];
+	
+	NSLog(@"SSH Tunnel PID = \"%d\"", [sshTask processIdentifier]);
 }
 
 
 -(IBAction)destroyTunnel:(id)sender {
 	if ([sshTask isRunning]) {
-		NSLog(@"Destroying tunnel");
+		NSLog(@"Destroying tunnel with PID = \"%d\"", [sshTask processIdentifier]);
 		[sshTask interrupt];
-		[sshTask waitUntilExit];		
+		[sshTask waitUntilExit];
 		NSLog(@"Tunnel closed!");				
 	} else {
 		NSLog(@"No tunnel established at the moment!");
@@ -110,6 +125,10 @@
 	sshTask = nil;
 	inputPipe = nil;
 	outputPipe = nil;
+}
+
+-(IBAction)preferencesPanel:(id)sender {
+	NSLog(@"Preferences Panel");
 }
 
 -(IBAction)quitApplication:(id)sender {

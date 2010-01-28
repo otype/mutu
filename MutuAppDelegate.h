@@ -30,5 +30,6 @@
 
 -(IBAction)createTunnel:(id)sender;
 -(IBAction)destroyTunnel:(id)sender;
+-(IBAction)preferencesPanel:(id)sender;
 -(IBAction)quitApplication:(id)sender;
 @end
