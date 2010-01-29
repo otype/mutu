@@ -50,20 +50,19 @@
 	NSData *data = [[outputPipe fileHandleForReading] readDataToEndOfFile];	
 	NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];	
 	
-    if (status == 0) {
-		/* THIS PART IS MOST LIKELY NEVER BEING CALLED */
-		NSLog(@"Task response: %@", [result componentsSeparatedByString:@"\n"]);
-	} else {
+    if (status != 0) {
 		NSLog(@"Tunnel task terminated");
 		NSArray *terminalResponses;
 		terminalResponses = [result componentsSeparatedByString:@"\n"];
 		for(NSDictionary *responseLine in terminalResponses) {
 			if ([(NSString *)responseLine length] != 0) {				
 				NSLog(@"[TERMRESP] \"%@\"", responseLine);
-				[self killTask];
-//				[self somethingWentWrong];
+				[self killSSHTask];
 			}
-		}
+		}		
+	} else {
+		/* THIS PART IS MOST LIKELY NEVER BEING CALLED */
+		NSLog(@"Task response: %@", [result componentsSeparatedByString:@"\n"]);
 	}        
 	
 	/* GC */
@@ -120,17 +119,17 @@
 
 
 -(IBAction)destroyTunnel:(id)sender {
-	[self killTask];
+	[self killSSHTask];
 }
 
--(void)killTask {
+-(void)killSSHTask {
 	if ([sshTask isRunning]) {
 		NSLog(@"Destroying tunnel with PID = \"%d\"", [sshTask processIdentifier]);
 		[sshTask interrupt];
 		[sshTask waitUntilExit];
 		NSLog(@"Tunnel closed!");
 	} else {
-		NSLog(@"No tunnels exist!");
+		// Be quiet!
 	}
 	
 	[self switchMenuItemTitle:TRUE stopItem:FALSE];
@@ -141,19 +140,10 @@
 	outputPipe = nil;	
 }
 
--(IBAction)preferencesPanel:(id)sender {
-	NSLog(@"Preferences Panel");
-}
-
 -(void)switchMenuItemTitle:(BOOL)startItem stopItem:(BOOL)stopItemValue {
+//	[startTunnelMenuItem setTitle:NSLocalizedString(@"Tunnel established", @"The tunnel")];
 	[startTunnelMenuItem setEnabled:startItem];
 	[stopTunnelMenuItem setEnabled:stopItemValue];	
 }
-
-//-(void)somethingWentWrong {
-//	NSLog(@"[ERROR] Uh-oh! Something went wrong!");
-//	NSRunAlertPanel(@"Tunnel is down!", @"Please check what went wrong!", @"OK", nil, nil);
-//
-//}
 
 @end

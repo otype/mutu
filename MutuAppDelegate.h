@@ -32,9 +32,7 @@
 
 -(IBAction)createTunnel:(id)sender;
 -(IBAction)destroyTunnel:(id)sender;
--(IBAction)preferencesPanel:(id)sender;
--(void)killTask;
+-(void)killSSHTask;
 -(void)switchMenuItemTitle:(BOOL)startItem stopItem:(BOOL)stopItemValue;
-//-(void)somethingWentWrong;
 
 @end
