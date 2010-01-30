@@ -10,12 +10,18 @@
 
 
 @interface PreferenceController : NSWindowController {
-	IBOutlet NSButton *okButton;
+	
+	/* Create a single server credential record */
+	IBOutlet NSButton *saveButton;
 	IBOutlet NSButton *cancelButton;
 	IBOutlet NSTextField *usernameField;
 	IBOutlet NSTextField *passwordField;
 	IBOutlet NSTextField *servernameField;
 	IBOutlet NSTextField *socksPortField;
+	
+	/* List of servers */
+	IBOutlet NSTableView *serverTable;
+	
 }
 
 -(IBAction)changeSSHCredentials:(id)sender;

@@ -223,7 +223,7 @@
 				<key>PBXProjectModuleGUID</key>
 				<string>EF45228B111226C3001E86A3</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>MutuAppDelegate.m</string>
+				<string>MutuAppDelegate.h</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
@@ -231,15 +231,15 @@
 						<key>PBXProjectModuleGUID</key>
 						<string>EF45228C111226C3001E86A3</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>MutuAppDelegate.m</string>
+						<string>MutuAppDelegate.h</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>EF4523B411125DB1001E86A3</string>
+						<string>EF4524541114ED6E001E86A3</string>
 						<key>history</key>
 						<array>
+							<string>EF45240711133175001E86A3</string>
 							<string>EF4523A911125CD8001E86A3</string>
-							<string>EF4523A011125C8B001E86A3</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -276,7 +276,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>EF4523B511125DB1001E86A3</string>
+						<string>EF4524551114ED6E001E86A3</string>
 						<key>history</key>
 						<array>
 							<string>EF452383111256D5001E86A3</string>
@@ -297,47 +297,6 @@
 				<false/>
 				<key>RubberWindowFrame</key>
 				<string>315 56 852 722 0 0 1280 778 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>EF452373111237AB001E86A3</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>PreferenceController.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>EF452374111237AB001E86A3</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>PreferenceController.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>EF4523B611125DB1001E86A3</string>
-						<key>history</key>
-						<array>
-							<string>EF452375111237AB001E86A3</string>
-							<string>EF452376111237AB001E86A3</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {786, 629}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>15 103 786 670 0 0 1280 778 </string>
 			</dict>
 		</dict>
 	</array>
@@ -416,7 +375,7 @@
 									<array>
 										<array>
 											<integer>18</integer>
-											<integer>13</integer>
+											<integer>14</integer>
 											<integer>0</integer>
 										</array>
 									</array>
@@ -604,7 +563,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>286416305.67669898</real>
+	<real>286584174.99268699</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -621,17 +580,17 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>EF4523B311125D43001E86A3</string>
+		<string>EF4524561114ED6F001E86A3</string>
+		<string>EF452373111237AB001E86A3</string>
 		<string>EFFE720D110F28CC00BEBB6D</string>
 		<string>EF4521311111DC72001E86A3</string>
 		<string>EF4521321111DC72001E86A3</string>
 		<string>1C530D54069F1CE1000CFCEE</string>
-		<string>EF452373111237AB001E86A3</string>
-		<string>EF452311111231D1001E86A3</string>
-		<string>/Volumes/ProjectSafe/private/mutu/Mutu.xcodeproj</string>
-		<string>1C530D5B069F1CE1000CFCEE</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
+		<string>EF452311111231D1001E86A3</string>
 		<string>EF45228B111226C3001E86A3</string>
+		<string>1C530D5B069F1CE1000CFCEE</string>
+		<string>/Volumes/ProjectSafe/private/mutu/Mutu.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>1 357 446 419 0 0 1280 778 </string>
@@ -863,7 +822,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C530D52069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

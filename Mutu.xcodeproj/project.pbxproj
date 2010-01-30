@@ -18,6 +18,7 @@
 		EF4520F71111D6AA001E86A3 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4520F61111D6AA001E86A3 /* Preferences.xib */; };
 		EF4522071111EF8C001E86A3 /* Workflow.txt in Resources */ = {isa = PBXBuildFile; fileRef = EF4522061111EF8C001E86A3 /* Workflow.txt */; };
 		EF4522BF11122A5E001E86A3 /* Emerald.gif in Resources */ = {isa = PBXBuildFile; fileRef = EF4522BE11122A5E001E86A3 /* Emerald.gif */; };
+		EF45241711133365001E86A3 /* Servers.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = EF45241611133365001E86A3 /* Servers.xcdatamodel */; };
 		EF81C3091110A70A0029B281 /* PreChecks.m in Sources */ = {isa = PBXBuildFile; fileRef = EF81C3081110A70A0029B281 /* PreChecks.m */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		EF4520F61111D6AA001E86A3 /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		EF4522061111EF8C001E86A3 /* Workflow.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Workflow.txt; sourceTree = "<group>"; };
 		EF4522BE11122A5E001E86A3 /* Emerald.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Emerald.gif; sourceTree = "<group>"; };
+		EF45241611133365001E86A3 /* Servers.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Servers.xcdatamodel; sourceTree = "<group>"; };
 		EF81C3071110A70A0029B281 /* PreChecks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreChecks.h; sourceTree = "<group>"; };
 		EF81C3081110A70A0029B281 /* PreChecks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreChecks.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +63,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EF45241611133365001E86A3 /* Servers.xcdatamodel */,
 				256AC3D80F4B6AC300CF3369 /* MutuAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* MutuAppDelegate.m */,
 				EF81C3071110A70A0029B281 /* PreChecks.h */,
@@ -207,6 +210,7 @@
 				EF81C3091110A70A0029B281 /* PreChecks.m in Sources */,
 				EF4520F01111D3B2001E86A3 /* AppController.m in Sources */,
 				EF4520F31111D3FE001E86A3 /* PreferenceController.m in Sources */,
+				EF45241711133365001E86A3 /* Servers.xcdatamodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
