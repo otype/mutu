@@ -35,7 +35,6 @@
 		NSLog(@"-> PASSWORD = \"%@\"", [passwordField stringValue]);
 		NSLog(@"-> SERVER = \"%@\"", [servernameField stringValue]);
 		NSLog(@"-> SOCKS PORT = \"%@\"", [socksPortField stringValue]);
-		
 		[self close];		
 	}
 }
