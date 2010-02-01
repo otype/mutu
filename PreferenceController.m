@@ -7,7 +7,6 @@
 //
 
 #import "PreferenceController.h"
-#import "MutuAppDelegate.h"
 
 @implementation PreferenceController
 
@@ -32,7 +31,6 @@
 	} else {
 		NSLog(@"Setting credentials:");
 		NSLog(@"-> USERNAME = \"%@\"", [usernameField stringValue]);
-		NSLog(@"-> PASSWORD = \"%@\"", [passwordField stringValue]);
 		NSLog(@"-> SERVER = \"%@\"", [servernameField stringValue]);
 		NSLog(@"-> SOCKS PORT = \"%@\"", [socksPortField stringValue]);
 		[self close];		
