@@ -7,11 +7,12 @@
 //
 
 #import "MutuAppDelegate.h"
-#import "PreChecks.h"
+#import "Servers_AppDelegate.h"
 
 @implementation MutuAppDelegate
 
 @synthesize window;
+
 @synthesize sshTask;
 @synthesize sshSocksPort;
 @synthesize sshUser;
@@ -26,6 +27,7 @@
 	[statusMenuItem setHighlightMode:YES];	
 	[statusMenuItem setMenu:statusMenu];
 //	[statusMenuItem setTitle:NSLocalizedString(@"Mutu", @"Mutu menu item text")];	
+	[self addHostnamesToStatusbarMenu];
 }
 
 
@@ -141,9 +143,52 @@
 }
 
 -(void)switchMenuItemTitle:(BOOL)startItem stopItem:(BOOL)stopItemValue {
-//	[startTunnelMenuItem setTitle:NSLocalizedString(@"Tunnel established", @"The tunnel")];
 	[startTunnelMenuItem setEnabled:startItem];
 	[stopTunnelMenuItem setEnabled:stopItemValue];	
+}
+
+
+
+-(void)addHostnamesToStatusbarMenu {
+	if (!serversAppDelegate) {
+		NSLog(@"Initializing: [ServersAppDelegate]");
+		serversAppDelegate = [[Servers_AppDelegate alloc] init];
+	}
+	
+	NSManagedObjectContext *moc = [serversAppDelegate managedObjectContext];
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Server" inManagedObjectContext:moc];
+	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+	[request setEntity:entityDescription];
+	
+	// Set result type to Dictionaries
+	[request setResultType:NSDictionaryResultType];
+	
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"hostname" ascending:YES];
+	[request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	[sortDescriptor release];
+	
+	NSError *error;
+	NSArray *objects = [moc executeFetchRequest:request error:&error];
+	if (objects == nil) {
+		// Handle the error.
+		NSLog(@"[ERROR] Empty database!");
+	} else {
+		NSMenu *tunnelMenu = [[NSMenu alloc] initWithTitle:@""];
+		for (int i = 0; i < [objects count]; i++) {
+			NSLog(@"HOSTS = %@", [[objects objectAtIndex:i] valueForKey:@"hostname"]);			
+			NSMenuItem *currentItem = [[NSMenuItem alloc] initWithTitle:[[objects objectAtIndex:i] valueForKey:@"hostname"] 
+																 action:@selector(startTunnelWithGivenHostname:) 
+														  keyEquivalent:@""];
+			
+			[tunnelMenu addItem:currentItem];	
+		}
+		[tunnelMenu setSubmenu:tunnelMenu forItem:startTunnelSubMenuItem];
+	}			
+}
+
+-(void)startTunnelWithGivenHostname:(id)sender {
+	NSLog(@"Starting tunnel with %@!", sender);
+	NSLog(@"MENU ITEM TITLE = %@", [(NSMenuItem *)sender title]);
 }
 
 @end

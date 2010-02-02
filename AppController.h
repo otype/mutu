@@ -9,10 +9,12 @@
 #import <Cocoa/Cocoa.h>
 @class PreferenceController;
 
+
 @interface AppController : NSObject {
 	PreferenceController *preferenceController;
 }
 
 -(IBAction)showPreferencePanel:(id)sender;
-
+-(void)openProjectSite:(id)sender;
+-(void)openBugTrackingSite:(id)sender;
 @end

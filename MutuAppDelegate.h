@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+@class Servers_AppDelegate;
 
 @interface MutuAppDelegate : NSObject <NSApplicationDelegate> {
 	NSWindow *window;
@@ -15,6 +16,7 @@
 	IBOutlet NSMenu *statusMenu;
 	IBOutlet NSMenuItem *startTunnelMenuItem;
 	IBOutlet NSMenuItem *stopTunnelMenuItem;
+	IBOutlet NSMenuItem *startTunnelSubMenuItem;
 	
 	NSTask *sshTask;
 	NSPipe *inputPipe;
@@ -22,6 +24,8 @@
 	NSString *sshSocksPort;
 	NSString *sshUser;
 	NSString *sshServer;
+	
+	Servers_AppDelegate *serversAppDelegate;
 }
 
 @property (assign) IBOutlet		NSWindow	*window;
@@ -34,5 +38,6 @@
 -(IBAction)destroyTunnel:(id)sender;
 -(void)killSSHTask;
 -(void)switchMenuItemTitle:(BOOL)startItem stopItem:(BOOL)stopItemValue;
-
+-(void)addHostnamesToStatusbarMenu;
+-(void)startTunnelWithGivenHostname:(id)sender;
 @end

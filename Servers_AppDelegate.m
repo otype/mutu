@@ -10,7 +10,6 @@
 
 @implementation Servers_AppDelegate
 
-@synthesize window;
 
 /**
     Returns the support directory for the application, used to store the Core Data
@@ -110,15 +109,6 @@
     return managedObjectContext;
 }
 
-/**
-    Returns the NSUndoManager for the application.  In this case, the manager
-    returned is that of the managed object context for the application.
- */
- 
-- (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window {
-    return [[self managedObjectContext] undoManager];
-}
-
 
 /**
     Performs the save action for the application, which is to send the save:
@@ -200,7 +190,6 @@
  
 - (void)dealloc {
 
-    [window release];
     [managedObjectContext release];
     [persistentStoreCoordinator release];
     [managedObjectModel release];

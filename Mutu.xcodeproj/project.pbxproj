@@ -19,6 +19,12 @@
 		EF4522071111EF8C001E86A3 /* Workflow.txt in Resources */ = {isa = PBXBuildFile; fileRef = EF4522061111EF8C001E86A3 /* Workflow.txt */; };
 		EF4522BF11122A5E001E86A3 /* Emerald.gif in Resources */ = {isa = PBXBuildFile; fileRef = EF4522BE11122A5E001E86A3 /* Emerald.gif */; };
 		EF45241711133365001E86A3 /* Servers.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = EF45241611133365001E86A3 /* Servers.xcdatamodel */; };
+		EF7250A811177E540018FFAE /* destroy.icns in Resources */ = {isa = PBXBuildFile; fileRef = EF7250A711177E540018FFAE /* destroy.icns */; };
+		EF7250AA11177E5B0018FFAE /* prefs.icns in Resources */ = {isa = PBXBuildFile; fileRef = EF7250A911177E5B0018FFAE /* prefs.icns */; };
+		EF7250AC11177E650018FFAE /* Terminal.icns in Resources */ = {isa = PBXBuildFile; fileRef = EF7250AB11177E650018FFAE /* Terminal.icns */; };
+		EF7250AE11177E870018FFAE /* Keychain.icns in Resources */ = {isa = PBXBuildFile; fileRef = EF7250AD11177E870018FFAE /* Keychain.icns */; };
+		EF7250DD11178F1B0018FFAE /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7250DC11178F1B0018FFAE /* Helpers.m */; };
+		EF7250F9111790C20018FFAE /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7250F8111790C20018FFAE /* Constants.m */; };
 		EF81C3091110A70A0029B281 /* PreChecks.m in Sources */ = {isa = PBXBuildFile; fileRef = EF81C3081110A70A0029B281 /* PreChecks.m */; };
 		EFBFCC731117396800D0A00F /* Servers_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBFCC721117396800D0A00F /* Servers_AppDelegate.m */; };
 /* End PBXBuildFile section */
@@ -45,6 +51,14 @@
 		EF4522061111EF8C001E86A3 /* Workflow.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Workflow.txt; sourceTree = "<group>"; };
 		EF4522BE11122A5E001E86A3 /* Emerald.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Emerald.gif; sourceTree = "<group>"; };
 		EF45241611133365001E86A3 /* Servers.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Servers.xcdatamodel; sourceTree = "<group>"; };
+		EF7250A711177E540018FFAE /* destroy.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = destroy.icns; sourceTree = "<group>"; };
+		EF7250A911177E5B0018FFAE /* prefs.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = prefs.icns; sourceTree = "<group>"; };
+		EF7250AB11177E650018FFAE /* Terminal.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Terminal.icns; sourceTree = "<group>"; };
+		EF7250AD11177E870018FFAE /* Keychain.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Keychain.icns; sourceTree = "<group>"; };
+		EF7250DB11178F1B0018FFAE /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
+		EF7250DC11178F1B0018FFAE /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
+		EF7250F7111790C20018FFAE /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		EF7250F8111790C20018FFAE /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		EF81C3071110A70A0029B281 /* PreChecks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreChecks.h; sourceTree = "<group>"; };
 		EF81C3081110A70A0029B281 /* PreChecks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreChecks.m; sourceTree = "<group>"; };
 		EFBFCC711117396800D0A00F /* Servers_AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Servers_AppDelegate.h; sourceTree = "<group>"; };
@@ -66,16 +80,10 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EFBFCC711117396800D0A00F /* Servers_AppDelegate.h */,
-				EFBFCC721117396800D0A00F /* Servers_AppDelegate.m */,
-				256AC3D80F4B6AC300CF3369 /* MutuAppDelegate.h */,
-				256AC3D90F4B6AC300CF3369 /* MutuAppDelegate.m */,
-				EF81C3071110A70A0029B281 /* PreChecks.h */,
-				EF81C3081110A70A0029B281 /* PreChecks.m */,
-				EF4520EE1111D3B2001E86A3 /* AppController.h */,
-				EF4520EF1111D3B2001E86A3 /* AppController.m */,
-				EF4520F11111D3FE001E86A3 /* PreferenceController.h */,
-				EF4520F21111D3FE001E86A3 /* PreferenceController.m */,
+				EF72507F11177C0C0018FFAE /* Delegates */,
+				EF72508011177C180018FFAE /* Helpers */,
+				EF7250D211178D0C0018FFAE /* Main */,
+				EF7250CD11178C9C0018FFAE /* Preferences */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -122,6 +130,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				EF7250F7111790C20018FFAE /* Constants.h */,
+				EF7250F8111790C20018FFAE /* Constants.m */,
 				256AC3F00F4B6AF500CF3369 /* Mutu_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -131,6 +141,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EF7250AD11177E870018FFAE /* Keychain.icns */,
+				EF7250AB11177E650018FFAE /* Terminal.icns */,
+				EF7250A911177E5B0018FFAE /* prefs.icns */,
+				EF7250A711177E540018FFAE /* destroy.icns */,
 				EF4522BE11122A5E001E86A3 /* Emerald.gif */,
 				EF4520F61111D6AA001E86A3 /* Preferences.xib */,
 				EF31718A110F54C900154890 /* tunnel.sh */,
@@ -149,6 +163,46 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF72507F11177C0C0018FFAE /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				EFBFCC721117396800D0A00F /* Servers_AppDelegate.m */,
+				EFBFCC711117396800D0A00F /* Servers_AppDelegate.h */,
+				256AC3D90F4B6AC300CF3369 /* MutuAppDelegate.m */,
+				256AC3D80F4B6AC300CF3369 /* MutuAppDelegate.h */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		EF72508011177C180018FFAE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EF81C3071110A70A0029B281 /* PreChecks.h */,
+				EF81C3081110A70A0029B281 /* PreChecks.m */,
+				EF7250DB11178F1B0018FFAE /* Helpers.h */,
+				EF7250DC11178F1B0018FFAE /* Helpers.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		EF7250CD11178C9C0018FFAE /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				EF4520F21111D3FE001E86A3 /* PreferenceController.m */,
+				EF4520F11111D3FE001E86A3 /* PreferenceController.h */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		EF7250D211178D0C0018FFAE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EF4520EF1111D3B2001E86A3 /* AppController.m */,
+				EF4520EE1111D3B2001E86A3 /* AppController.h */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 		EFBFCBEB111660BE00D0A00F /* Models */ = {
@@ -208,6 +262,10 @@
 				EF4520F71111D6AA001E86A3 /* Preferences.xib in Resources */,
 				EF4522071111EF8C001E86A3 /* Workflow.txt in Resources */,
 				EF4522BF11122A5E001E86A3 /* Emerald.gif in Resources */,
+				EF7250A811177E540018FFAE /* destroy.icns in Resources */,
+				EF7250AA11177E5B0018FFAE /* prefs.icns in Resources */,
+				EF7250AC11177E650018FFAE /* Terminal.icns in Resources */,
+				EF7250AE11177E870018FFAE /* Keychain.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +283,8 @@
 				EF4520F31111D3FE001E86A3 /* PreferenceController.m in Sources */,
 				EF45241711133365001E86A3 /* Servers.xcdatamodel in Sources */,
 				EFBFCC731117396800D0A00F /* Servers_AppDelegate.m in Sources */,
+				EF7250DD11178F1B0018FFAE /* Helpers.m in Sources */,
+				EF7250F9111790C20018FFAE /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
