@@ -104,10 +104,10 @@
 	NSLog(@"Initializing: [Connection Details]");
 
 	sshSocksPort = @"7777";
-	sshUser = @"mavjones";
-	sshServer = @"bruja.cs.tu-berlin.de";
-//	sshUser = @"hgschmidt";
-//	sshServer = @"localhost";
+//	sshUser = @"mavjones";
+//	sshServer = @"bruja.cs.tu-berlin.de";
+	sshUser = @"hgschmidt";
+	sshServer = @"localhost";
 
 	NSLog(@"Initialization finished");
 	[self switchMenuItemTitle:TRUE stopItem:FALSE];
@@ -133,8 +133,30 @@
 	[sshTask setStandardError:outputPipe];
 	
 	[sshTask setLaunchPath:@"/usr/bin/ssh"];
-	[sshTask setArguments:[NSArray arrayWithObjects: @"-D", sshSocksPort, @"-l", sshUser, @"-N", sshServer, nil]];
-
+	
+	// setup ssh arguments
+	NSMutableArray *sshArgs = [NSMutableArray array];
+	
+	// no optional args
+	[sshArgs addObject:@"-Nnv"];
+	[sshArgs addObject:@"-oConnectionAttempts=1"];
+	[sshArgs addObject:@"-oEscapeChar=none"];
+	[sshArgs addObject:@"-oExitOnForwardFailure=yes"];
+	[sshArgs addObject:@"-oKbdInteractiveAuthentication=no"];
+	[sshArgs addObject:@"-oNumberOfPasswordPrompts=1"];
+	[sshArgs addObject:@"-oPermitLocalCommand=no"];
+	[sshArgs addObject:@"-oStrictHostKeyChecking=no"];
+	
+//	[sshTask setArguments:[NSArray arrayWithObjects: @"-D", sshSocksPort, @"-l", sshUser, @"-N", sshServer, nil]];
+	[sshArgs addObject:@"-D"];
+	[sshArgs addObject:sshSocksPort];
+	[sshArgs addObject:@"-l"];
+	[sshArgs addObject:sshUser];
+	[sshArgs addObject:@"-N"];
+	[sshArgs addObject:sshServer];
+	
+	[sshTask setArguments:sshArgs];
+	
 	NSLog(@"Establishing tunnel ...");
 	NSLog(@"-> SOCKS PORT = \"%@\"", sshSocksPort);
 	NSLog(@"-> SSH SERVER = \"%@\"", sshServer);

@@ -19,6 +19,7 @@
 		EF4522071111EF8C001E86A3 /* Workflow.txt in Resources */ = {isa = PBXBuildFile; fileRef = EF4522061111EF8C001E86A3 /* Workflow.txt */; };
 		EF4522BF11122A5E001E86A3 /* Emerald.gif in Resources */ = {isa = PBXBuildFile; fileRef = EF4522BE11122A5E001E86A3 /* Emerald.gif */; };
 		EF45241711133365001E86A3 /* Servers.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = EF45241611133365001E86A3 /* Servers.xcdatamodel */; };
+		EF592292111CF93E00C6F4FD /* SSHTunnel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF592291111CF93E00C6F4FD /* SSHTunnel.m */; };
 		EF7250A811177E540018FFAE /* destroy.icns in Resources */ = {isa = PBXBuildFile; fileRef = EF7250A711177E540018FFAE /* destroy.icns */; };
 		EF7250AA11177E5B0018FFAE /* prefs.icns in Resources */ = {isa = PBXBuildFile; fileRef = EF7250A911177E5B0018FFAE /* prefs.icns */; };
 		EF7250AC11177E650018FFAE /* Terminal.icns in Resources */ = {isa = PBXBuildFile; fileRef = EF7250AB11177E650018FFAE /* Terminal.icns */; };
@@ -51,6 +52,9 @@
 		EF4522061111EF8C001E86A3 /* Workflow.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Workflow.txt; sourceTree = "<group>"; };
 		EF4522BE11122A5E001E86A3 /* Emerald.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Emerald.gif; sourceTree = "<group>"; };
 		EF45241611133365001E86A3 /* Servers.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Servers.xcdatamodel; sourceTree = "<group>"; };
+		EF592290111CF93E00C6F4FD /* SSHTunnel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHTunnel.h; sourceTree = "<group>"; };
+		EF592291111CF93E00C6F4FD /* SSHTunnel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHTunnel.m; sourceTree = "<group>"; };
+		EF592296111CFA6600C6F4FD /* SSHTunnelDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHTunnelDebug.h; sourceTree = "<group>"; };
 		EF7250A711177E540018FFAE /* destroy.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = destroy.icns; sourceTree = "<group>"; };
 		EF7250A911177E5B0018FFAE /* prefs.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = prefs.icns; sourceTree = "<group>"; };
 		EF7250AB11177E650018FFAE /* Terminal.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Terminal.icns; sourceTree = "<group>"; };
@@ -80,6 +84,11 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EF7250F8111790C20018FFAE /* Constants.m */,
+				EF7250F7111790C20018FFAE /* Constants.h */,
+				EF592296111CFA6600C6F4FD /* SSHTunnelDebug.h */,
+				EF592290111CF93E00C6F4FD /* SSHTunnel.h */,
+				EF592291111CF93E00C6F4FD /* SSHTunnel.m */,
 				EF72507F11177C0C0018FFAE /* Delegates */,
 				EF72508011177C180018FFAE /* Helpers */,
 				EF7250D211178D0C0018FFAE /* Main */,
@@ -130,8 +139,6 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				EF7250F7111790C20018FFAE /* Constants.h */,
-				EF7250F8111790C20018FFAE /* Constants.m */,
 				256AC3F00F4B6AF500CF3369 /* Mutu_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -285,6 +292,7 @@
 				EFBFCC731117396800D0A00F /* Servers_AppDelegate.m in Sources */,
 				EF7250DD11178F1B0018FFAE /* Helpers.m in Sources */,
 				EF7250F9111790C20018FFAE /* Constants.m in Sources */,
+				EF592292111CF93E00C6F4FD /* SSHTunnel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
