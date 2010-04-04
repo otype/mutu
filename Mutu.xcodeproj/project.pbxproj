@@ -20,6 +20,7 @@
 		EF4522BF11122A5E001E86A3 /* Emerald.gif in Resources */ = {isa = PBXBuildFile; fileRef = EF4522BE11122A5E001E86A3 /* Emerald.gif */; };
 		EF45241711133365001E86A3 /* Servers.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = EF45241611133365001E86A3 /* Servers.xcdatamodel */; };
 		EF592292111CF93E00C6F4FD /* SSHTunnel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF592291111CF93E00C6F4FD /* SSHTunnel.m */; };
+		EF662747114C40B400BD6CCC /* SSHLib.m in Sources */ = {isa = PBXBuildFile; fileRef = EF662746114C40B400BD6CCC /* SSHLib.m */; };
 		EF7250A811177E540018FFAE /* destroy.icns in Resources */ = {isa = PBXBuildFile; fileRef = EF7250A711177E540018FFAE /* destroy.icns */; };
 		EF7250AA11177E5B0018FFAE /* prefs.icns in Resources */ = {isa = PBXBuildFile; fileRef = EF7250A911177E5B0018FFAE /* prefs.icns */; };
 		EF7250AC11177E650018FFAE /* Terminal.icns in Resources */ = {isa = PBXBuildFile; fileRef = EF7250AB11177E650018FFAE /* Terminal.icns */; };
@@ -55,6 +56,8 @@
 		EF592290111CF93E00C6F4FD /* SSHTunnel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHTunnel.h; sourceTree = "<group>"; };
 		EF592291111CF93E00C6F4FD /* SSHTunnel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHTunnel.m; sourceTree = "<group>"; };
 		EF592296111CFA6600C6F4FD /* SSHTunnelDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHTunnelDebug.h; sourceTree = "<group>"; };
+		EF662745114C40B400BD6CCC /* SSHLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHLib.h; sourceTree = "<group>"; };
+		EF662746114C40B400BD6CCC /* SSHLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHLib.m; sourceTree = "<group>"; };
 		EF7250A711177E540018FFAE /* destroy.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = destroy.icns; sourceTree = "<group>"; };
 		EF7250A911177E5B0018FFAE /* prefs.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = prefs.icns; sourceTree = "<group>"; };
 		EF7250AB11177E650018FFAE /* Terminal.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Terminal.icns; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 				EF72508011177C180018FFAE /* Helpers */,
 				EF7250D211178D0C0018FFAE /* Main */,
 				EF7250CD11178C9C0018FFAE /* Preferences */,
+				EF662745114C40B400BD6CCC /* SSHLib.h */,
+				EF662746114C40B400BD6CCC /* SSHLib.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				EF7250DD11178F1B0018FFAE /* Helpers.m in Sources */,
 				EF7250F9111790C20018FFAE /* Constants.m in Sources */,
 				EF592292111CF93E00C6F4FD /* SSHTunnel.m in Sources */,
+				EF662747114C40B400BD6CCC /* SSHLib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
